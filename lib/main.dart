@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:nyrs_projet/views/localisation.dart';
+import 'package:nyrs_projet/views/splashscreen.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -13,8 +13,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
      
       debugShowCheckedModeBanner: false,
-      home:  MapScreen(
-)
+      home: SplashScreen()
 
     );
   }

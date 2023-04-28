@@ -20,7 +20,7 @@ class _MapScreenState extends State<MapScreen> {
       _markers.add(Marker(
         markerId: MarkerId(_lastMapPosition.toString()),
         position: _lastMapPosition,
-        infoWindow: InfoWindow(
+        infoWindow: const InfoWindow(
           title: 'Douala',
           snippet: 'Ville portuaire du Cameroun',
         ),
@@ -36,11 +36,11 @@ class _MapScreenState extends State<MapScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Carte de Douala'),
+        title: const Text('Carte de Douala'),
       ),
       body: GoogleMap(
         onMapCreated: _onMapCreated,
-        initialCameraPosition: CameraPosition(
+        initialCameraPosition: const CameraPosition(
           target: _center,
           zoom: 11.0,
         ),

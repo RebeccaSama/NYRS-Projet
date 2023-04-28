@@ -13,7 +13,12 @@ class SliderPages extends StatefulWidget {
 }
 
 class _SliderPagesState extends State<SliderPages> {
-  final List<Container> _slides = [
+ 
+  late int _currentIndex = 0;         
+  @override
+
+  Widget build(BuildContext context) {
+    final List<Container> _slides = [
     Container(
       padding: const EdgeInsets.all(15.0),
       child: Column(
@@ -86,7 +91,9 @@ class _SliderPagesState extends State<SliderPages> {
                   ),
                 ),
               ),
-               onPressed: () {  },
+                onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomeView()));
+                        },
               child: const Text('Shop now'),
             ),
           ),
@@ -95,11 +102,6 @@ class _SliderPagesState extends State<SliderPages> {
     ),
   ];
 
-  late int _currentIndex = 0;         
-  @override
-
-  Widget build(BuildContext context) {
-   
     return Scaffold(
        backgroundColor: myBackgroundColor,
       body: SingleChildScrollView(
@@ -165,9 +167,6 @@ class _SliderPagesState extends State<SliderPages> {
         ),
       )
       );  }
-void _handleButtonPressed(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeView()),);
-  }
 
 }
 

@@ -40,13 +40,13 @@ class ProfilePage extends StatelessWidget {
                         padding: const EdgeInsets.only(right: 150, top: 50),
                         child: const Text(
                           'Rebecca SAMA ',
-                          style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+                          style:  TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
                         ),
                       ),
                   
                       const Text(
                         'samarebecca@gmail.com ',
-                        style: const TextStyle(fontWeight: FontWeight.normal, color: Color.fromARGB(230, 228, 227, 227)),
+                        style:  TextStyle(fontWeight: FontWeight.normal, color: Color.fromARGB(230, 228, 227, 227)),
             ),
                ],
                    ), 
