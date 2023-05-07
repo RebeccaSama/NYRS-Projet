@@ -39,7 +39,7 @@ class _SliderPagesState extends State<SliderPages> {
           Container(
             padding: const EdgeInsets.only(bottom: 20),
             child: const Text(
-              " Livrez-vous la vie facilement avec notre application de livraison !",
+              " Deliver your life easily with our delivery app!",
               style: TextStyle(fontSize: 16,color: Color.fromARGB(221, 68, 67, 67)),
               textAlign: TextAlign.center,
             ),
@@ -60,21 +60,19 @@ class _SliderPagesState extends State<SliderPages> {
             padding: const EdgeInsets.only(bottom: 20),
             child: const Text(
               "_ _ _ _ _ _ _ _ _ _ _ _",
-              style: TextStyle(fontSize: 15,),
+              style: TextStyle(fontSize: 20,),
               textAlign: TextAlign.center,
             ),
           ),
-          Container(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: const Text(
+const Expanded(
+            child:  Text(
               " Get your groceries delivered to your home",
               style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
           ),
-          Container(
-            padding: const EdgeInsets.only(bottom: 15),
-            child: const Text(
+          const Expanded(
+            child:  Text(
               " The best delivery app in town for delivering your daily fresh groceries",
               style: TextStyle(fontSize: 16, color: Color.fromARGB(136, 107, 100, 100)),
               textAlign: TextAlign.center,
@@ -92,7 +90,7 @@ class _SliderPagesState extends State<SliderPages> {
                 ),
               ),
                 onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomeView()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> HomeView()));
                         },
               child: const Text('Shop now'),
             ),
@@ -112,9 +110,9 @@ class _SliderPagesState extends State<SliderPages> {
               options: CarouselOptions(
                   height: MediaQuery.of(context).size.height*.6,
                   enlargeCenterPage: true,
-                  autoPlay: false,
+                  autoPlay: true,
                   enableInfiniteScroll: true,
-                  // autoPlayInterval: const Duration(seconds: 3),
+                  autoPlayInterval: const Duration(seconds: 3),
                   // autoPlayAnimationDuration: const Duration(milliseconds: 800),
                   pauseAutoPlayOnTouch: true,
                   scrollDirection: Axis.horizontal,

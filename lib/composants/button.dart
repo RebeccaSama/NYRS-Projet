@@ -13,7 +13,7 @@ class _ButtonComponentState extends State<ButtonComponent> {
   Widget build(BuildContext context) {
     return InkWell(
        onTap: () => {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeView()),)
+    Navigator.push(context, MaterialPageRoute(builder: (context) =>  HomeView()),)
   }
     );
 }}
