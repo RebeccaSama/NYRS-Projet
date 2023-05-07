@@ -57,6 +57,12 @@ flutter:
     - assets/images/panier.png
     - assets/images/succes.png
     - assets/images/Ls.png
+    - assets/images/diary.png
+    - assets/images/fruit.png
+    - assets/images/gg.png
+    - assets/images/meat.png
+    - assets/images/perper.png
+    - assets/images/vegetable.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

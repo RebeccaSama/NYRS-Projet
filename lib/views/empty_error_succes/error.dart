@@ -42,9 +42,9 @@ class ErrorView extends StatelessWidget {
       RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
       ),)), 
-              onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => const HomeView())); 
+              onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) =>  HomeView())); 
               }, child: const Text("Try Again"),),
-          ), TextButton (onPressed: () {  Navigator.push(context, MaterialPageRoute(builder: (context)=> const HomeView()));},
+          ), TextButton (onPressed: () {  Navigator.push(context, MaterialPageRoute(builder: (context)=>  HomeView()));},
           child: const Text("Back Home",),
           )
           ]));
