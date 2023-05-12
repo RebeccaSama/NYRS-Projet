@@ -61,6 +61,7 @@ flutter:
     - assets/images/fruit.png
     - assets/images/gg.png
     - assets/images/meat.png
+    - assets/images/meatC.png
     - assets/images/perper.png
     - assets/images/vegetable.png
   # An image asset can refer to one or more resolution-specific "variants", see

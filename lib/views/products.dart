@@ -14,91 +14,91 @@ class _ProductsViewState extends State<ProductsView> {
       "image": "assets/images/perper.png",
       "title": "Bell Pepper Red",
       "price": "500FCFA",
-      "quantity": "1kg"
+      "quantity": "1kg,"
     },
     {
     "image": "assets/images/meat.png",
       "title": "Lamb meat",
       "price": "3000FCFA",
-      "quantity": "1kg"
+      "quantity": "1kg,"
     },
     {
     "image": "assets/images/meat.png",
       "title": "Lamb meat",
       "price": "3000FCFA",
-      "quantity": "1kg"
+      "quantity": "1kg,"
     },
     {
     "image": "assets/images/meat.png",
       "title": "Lamb meat",
       "price": "3000FCFA",
-      "quantity": "1kg"
+      "quantity": "1kg,"
     },
     {
     "image": "assets/images/meat.png",
       "title": "Lamb meat",
       "price": "3000FCFA",
-      "quantity": "1kg"
+      "quantity": "1kg,"
     },
     {
     "image": "assets/images/meat.png",
       "title": "Lamb meat",
       "price": "3000FCFA",
-      "quantity": "1kg"
+      "quantity": "1kg,"
     },
     {
     "image": "assets/images/meat.png",
       "title": "Lamb meat",
       "price": "3000FCFA",
-      "quantity": "1kg"
+      "quantity": "1kg,"
     },
     {
     "image": "assets/images/meat.png",
       "title": "Lamb meat",
       "price": "3000FCFA",
-      "quantity": "1kg"
+      "quantity": "1kg,"
     },
     {
     "image": "assets/images/meat.png",
       "title": "Lamb meat",
       "price": "3000FCFA",
-      "quantity": "1kg"
+      "quantity": "1kg,"
     },
     {
     "image": "assets/images/meat.png",
       "title": "Lamb meat",
       "price": "3000FCFA",
-      "quantity": "1kg"
+      "quantity": "1kg,"
     },
     {
     "image": "assets/images/meat.png",
       "title": "Lamb meat",
       "price": "3000FCFA",
-      "quantity": "1kg"
+      "quantity": "1kg,"
     },
     {
     "image": "assets/images/meat.png",
       "title": "Lamb meat",
       "price": "3000FCFA",
-      "quantity": "1kg"
+      "quantity": "1kg,"
     },
     {
     "image": "assets/images/meat.png",
       "title": "Lamb meat",
       "price": "3000FCFA",
-      "quantity": "1kg"
+      "quantity": "1kg,"
     },
      {
     "image": "assets/images/meat.png",
       "title": "Lamb meat",
       "price": "3000FCFA",
-      "quantity": "1kg"
+      "quantity": "1kg,"
     },
      {
     "image": "assets/images/meat.png",
       "title": "Lamb meat",
       "price": "3000FCFA",
-      "quantity": "1kg"
+      "quantity": "1kg,"
     },
    
   ];
@@ -106,6 +106,16 @@ class _ProductsViewState extends State<ProductsView> {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      appBar: AppBar(
+          backgroundColor: const Color(0xFF23AA49),
+          leading: 
+             IconButton(onPressed:() {Navigator.pop(context);}, icon: const Icon(Icons.arrow_back_ios_new)),
+        elevation: 5,
+          title: const Text(
+                    'Products', 
+                    style: TextStyle(color: Colors.white,),
+                  ), 
+                ),
       body: Column(
         children: [
           Row(
@@ -113,7 +123,7 @@ class _ProductsViewState extends State<ProductsView> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [ 
                                Container(
-                                  padding: const EdgeInsets.only(left: 10),
+                                  padding: const EdgeInsets.only(left: 10, top: 15),
                                    child:  InkWell(
                                       child:  const CircleAvatar(
                                         radius: 25,
@@ -130,7 +140,7 @@ class _ProductsViewState extends State<ProductsView> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                                children:  [
                                 Container(
-                                  padding: const EdgeInsets.only(left: 10, ),
+                                  padding: const EdgeInsets.only(left: 10,top: 15 ),
                                   child:
                                   const Text(
                                   'Welcome',
@@ -150,67 +160,123 @@ class _ProductsViewState extends State<ProductsView> {
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                    Container(
-                                    padding: const EdgeInsets.only(right: 15),
-                                    child: IconButton(onPressed:() {Navigator.pop(context);}, icon: const Icon(Icons.arrow_back_ios_new),color: Colors.black,),
-                                  ),
+                                   
                                   Container(
-                                    padding: const EdgeInsets.only(left: 18),
-                                    child: const Text("Vegetable"),
+                                    padding: const EdgeInsets.only(left: 18, top: 15),
+                                    child: const Text("Vegetable", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
                                   ),
                                   Container(
                                     padding: const EdgeInsets.only(right: 15),
-                                    child: TextButton(child: const Icon(Icons.search, color:  Color(0xFF23AA49),), onPressed: ()=>{},),
+                                    child: TextButton(child: const Icon(Icons.search_rounded, color:  Color(0xFF23AA49),), onPressed: ()=>{},),
                                   )
                                 ],
                               ),
                        const SizedBox(height: 10,),
-                             SingleChildScrollView(
-                               child: GridView.builder(
-                                         itemCount: items.length,
-                                         shrinkWrap: true,
-                                         itemBuilder: (BuildContext context, int index){
-                                           return  Container(
-                                       padding: const EdgeInsets.all(10),
-                                       height: 150,
-                                       child: Column(
-                                         children: [
-                                           Image.asset(items[index]["image"]),
-                                            Expanded(child: 
-                                           items[index]["title"]),
-                                            Row(
-                                              children: [
-                                                Expanded(child: 
-                                           items[index]["price"]),
-                                           Expanded(child: 
-                                           items[index]["quantity"]),
-                                              ],
-                                            ),
-                                           Container(
-                                             height: 50,
-                                             decoration: BoxDecoration(
-                                               borderRadius: BorderRadius.circular(90),
-                                               color:const Color(0xFF23AA49)
-                                             ),
-                                             padding: const EdgeInsets.only(left: 30),
-                                             child: 
-                                             TextButton(child: const Icon(Icons.add, color: Colors.white,), onPressed: (){},) 
-                                           )
-                                         ],
-                                       ),
-                                     );
-                                           },
-                                         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                                             crossAxisCount: 2,
-                                             mainAxisSpacing: 10,
-                                             crossAxisSpacing: 10
-                                     ),),
-                             )
-            
-                       
-                             
-                     
-        ],
+  Expanded(
+    child: Container(
+      padding: const EdgeInsets.all(10),
+      width: 306,
+      child: SingleChildScrollView(
+      physics: const AlwaysScrollableScrollPhysics(),
+      scrollDirection: Axis.vertical,
+      child: GridView.builder(
+        itemCount: items.length,
+        shrinkWrap: true,
+        itemBuilder: (BuildContext context, int index) {
+          return Container(
+            width: 20,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(15),
+            ),
+            padding: const EdgeInsets.all(5),
+            height: 70,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  decoration:  BoxDecoration(
+                    borderRadius:  BorderRadius.circular(15),
+                    // boxShadow:[
+                    //   BoxShadow(
+                    //     // color: Colors.grey.withOpacity(0.5),
+                    //     spreadRadius: 5,
+                    //     blurRadius: 2,
+                    //     offset: Offset(0,3),
+                    //   )
+                    // ] ,
+        //             gradient: const RadialGradient(
+        //           center: Alignment.center,
+        //           radius: 0.5,
+        //           colors: [
+        //             Colors.white,
+        //             Colors.green,
+        //           ],
+        // ),
+                  ),
+                  child: Image.asset(
+                    items[index]["image"],
+                    height: 80,
+                    width: 80,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                   Align(
+                    alignment: Alignment.centerLeft,
+                     child: Container(
+                      padding: const EdgeInsets.only(left: 10),
+                       child: Text(
+                        items[index]["title"],
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(fontSize: 12),
+                                     ),
+                     ),
+                   ),
+                const SizedBox(height: 2),
+                Container(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(items[index]["quantity"], style: const TextStyle(color: Colors.red, fontSize: 12),),
+                      const SizedBox(width: 2),
+                      Text(items[index]["price"],style: const TextStyle(color: Colors.red,fontSize: 12),),
+                      const SizedBox(width: 15),
+                       Align(
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      height: 25,
+                      width: 25,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(90),
+                        color: const Color(0xFF23AA49),
+                      ),
+                      child: const Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                    ],
+                  ),
+                ),
+               
+              ],
+            ),
+          );
+        },
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 10,
+          crossAxisSpacing: 10,
+        ),
+      ),
+    ),
+    ),
+  )
+ ],
       ),
     );
   }

@@ -1,8 +1,7 @@
-
 import 'package:flutter/material.dart';
+import 'package:nyrs_projet/views/card.dart';
 import 'package:nyrs_projet/views/home.dart';
 import 'package:nyrs_projet/views/products.dart';
-import 'package:nyrs_projet/views/splashscreen.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
      
       debugShowCheckedModeBanner: false,
-      home: HomeView()
+      home: CardView()
 
     );
   }
