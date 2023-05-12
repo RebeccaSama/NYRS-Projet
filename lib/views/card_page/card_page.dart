@@ -23,6 +23,48 @@ class _CardViewState extends State<CardView> {
       "price": "3000FCFA",
       "quantity": "1kg,"
     },
+    {
+      "id": 1,
+      "image": "assets/images/perper.png",
+      "title": "Bell Pepper Red",
+      "price": "500FCFA",
+      "quantity": "1kg"
+    },
+    {
+      "id": 2,
+      "image": "assets/images/meat.png",
+      "title": "Lamb meat",
+      "price": "3000FCFA",
+      "quantity": "1kg,"
+    },
+    {
+      "id": 1,
+      "image": "assets/images/perper.png",
+      "title": "Bell Pepper Red",
+      "price": "500FCFA",
+      "quantity": "1kg"
+    },
+    {
+      "id": 2,
+      "image": "assets/images/meat.png",
+      "title": "Lamb meat",
+      "price": "3000FCFA",
+      "quantity": "1kg,"
+    },
+    {
+      "id": 1,
+      "image": "assets/images/perper.png",
+      "title": "Bell Pepper Red",
+      "price": "500FCFA",
+      "quantity": "1kg"
+    },
+    {
+      "id": 2,
+      "image": "assets/images/meat.png",
+      "title": "Lamb meat",
+      "price": "3000FCFA",
+      "quantity": "1kg,"
+    },
   ];
 
   @override
@@ -83,18 +125,25 @@ class _CardViewState extends State<CardView> {
                       ),
                     ),
                     const Spacer(),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: Container(
-                        height: 25,
-                        width: 25,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(90),
-                        ),
-                        child: const Icon(
-                          Icons.remove_circle,
-                          color: Colors.grey,
-                        ),
+                    // Container(
+                    //   padding: const EdgeInsets.all(6),
+                    //   decoration: const BoxDecoration(
+                    //     shape: BoxShape.circle,
+                    //   ),
+                    //   child: const Icon(
+                    //     Icons.remove_circle,
+                    //     color: Colors.grey,
+                    //   ),
+                    // ),
+                    Container(
+                      padding: const EdgeInsets.all(6),
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Color.fromARGB(255, 217, 219, 221),
+                      ),
+                      child: const Icon(
+                        Icons.remove_circle,
+                        color: Color(0xff979899),
                       ),
                     ),
                     Container(
@@ -102,11 +151,10 @@ class _CardViewState extends State<CardView> {
                       child: const Text("5"),
                     ),
                     Container(
-                      height: 25,
-                      width: 25,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(90),
-                        color: const Color(0xFF23AA49),
+                      padding: const EdgeInsets.all(6),
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Color(0xFF23AA49),
                       ),
                       child: const Icon(
                         Icons.add,
