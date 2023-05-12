@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nyrs_projet/views/home/home.dart';
-import 'package:nyrs_projet/views/home/widgets/products.dart';
-import 'package:nyrs_projet/views/splashscreen/splashscreen.dart';
+import 'package:nyrs_projet/views/card_page/card_page.dart';
+import 'package:nyrs_projet/views/product_page/product_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +12,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: HomeView());
+        debugShowCheckedModeBanner: false, home: CardView());
   }
 }

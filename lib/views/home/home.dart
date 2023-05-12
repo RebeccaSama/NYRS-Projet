@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nyrs_projet/views/home/product_item.dart';
 import 'package:nyrs_projet/views/home/widgets/header.dart';
-import 'package:nyrs_projet/views/profile/profilpage.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -289,7 +289,7 @@ class _HomeViewState extends State<HomeView> {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: GridView.builder(
                 itemCount: items.length,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     mainAxisSpacing: 12,
@@ -297,37 +297,11 @@ class _HomeViewState extends State<HomeView> {
                     crossAxisCount: 2,
                     childAspectRatio: 3 / 3.9),
                 itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    decoration: BoxDecoration(
-                        color: Color(0xffF3F5F7),
-                        borderRadius: BorderRadius.circular(8)),
-                    padding: const EdgeInsets.all(10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Image.asset(items[index]["image"]),
-                        Text(items[index]["title"]),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        Text(
-                            "${items[index]["quantity"] + " " + items[index]["price"]}"),
-                        Align(
-                          alignment: Alignment.bottomRight,
-                          child: Container(
-                            padding: EdgeInsets.all(8),
-                            decoration: const BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: const Color(0xFF23AA49),
-                            ),
-                            child: const Icon(
-                              Icons.add,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                  return ProductItems(
+                    image: items[index]["image"],
+                    price: items[index]["title"],
+                    quantity: items[index]["quantity"],
+                    title: items[index]["price"],
                   );
                 },
               ),
