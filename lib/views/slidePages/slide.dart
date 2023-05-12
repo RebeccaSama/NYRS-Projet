@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:nyrs_projet/views/home.dart';
+import 'package:nyrs_projet/views/home/home.dart';
 
 Color myBackgroundColor = Colors.white;
 

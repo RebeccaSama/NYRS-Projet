@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nyrs_projet/views/signup.dart';
+import 'package:nyrs_projet/views/register_page/signup.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);

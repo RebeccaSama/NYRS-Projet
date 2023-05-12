@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nyrs_projet/views/profilpage.dart';
+import 'package:nyrs_projet/views/profile/profilpage.dart';
 
 class ProductsView extends StatefulWidget {
   const ProductsView({ Key? key }) : super(key: key);

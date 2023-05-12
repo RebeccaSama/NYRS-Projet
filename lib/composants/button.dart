@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nyrs_projet/views/home.dart';
+import 'package:nyrs_projet/views/home/home.dart';
 
 class ButtonComponent extends StatefulWidget {
   const ButtonComponent({ Key? key }) : super(key: key);
