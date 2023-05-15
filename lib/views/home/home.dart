@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nyrs_projet/views/home/product_item.dart';
+import 'package:nyrs_projet/views/product_page/product_item.dart';
 import 'package:nyrs_projet/views/home/widgets/header.dart';
 
 class HomeView extends StatefulWidget {
@@ -118,7 +118,7 @@ class _HomeViewState extends State<HomeView> {
               child: TextField(
                 decoration: InputDecoration(
                   filled: true,
-                  fillColor: const Color(0xffF3F5F7),
+                  fillColor:  Color(0xffF3F5F7),
                   hintText: 'Rechercher',
                   prefixIcon: Icon(
                     Icons.search,
@@ -164,21 +164,23 @@ class _HomeViewState extends State<HomeView> {
                             ),
                             color: index % 2 == 0
                                 ? const Color(0xFF23AA49)
-                                : Color(0xFFFF8181),
+                                : const Color(0xFFFF8181),
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(16),
                             child: Column(
                               children: [
-                                Expanded(
+                                Container(
+                                  padding: const EdgeInsets.only(top: 15),
                                   child: Text(
                                     data[index]["title"],
                                     style: const TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 15,
                                         letterSpacing: 2),
                                   ),
                                 ),
+                                const SizedBox(height: 15,),
                                 Padding(
                                   padding:
                                       const EdgeInsets.symmetric(vertical: 2),

@@ -18,108 +18,115 @@ class ProfilePage extends StatelessWidget {
           Container(
             decoration: const BoxDecoration(color:  Color(0xFF23AA49)),
             padding: EdgeInsets.zero,
-            height: MediaQuery.of(context).size.height * 0.2,
+            height: MediaQuery.of(context).size.height * 0.1,
             width: double.infinity,
             child:  Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [ 
                         Container(
-                          padding: const EdgeInsets.only(left: 20,top: 30),
+                          padding: const EdgeInsets.only(left: 20),
                           child: const CircleAvatar(
-                            radius: 35,
+                            radius: 30,
                             backgroundImage: AssetImage("assets/images/Ls.png"),
                           ),
                         ),
                      
                    Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                      children:  [
                       Container(
-                        padding: const EdgeInsets.only(right: 150, top: 50),
+                        padding: const EdgeInsets.only( left: 10),
                         child: const Text(
                           'Rebecca SAMA ',
                           style:  TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
                         ),
                       ),
                   
-                      const Text(
-                        'samarebecca@gmail.com ',
-                        style:  TextStyle(fontWeight: FontWeight.normal, color: Color.fromARGB(230, 228, 227, 227)),
+                       Container(
+                        padding: const EdgeInsets.only( left: 10),
+                         child: const Text(
+                          'samarebecca@gmail.com ',
+                          style:  TextStyle(fontWeight: FontWeight.normal, color: Color.fromARGB(230, 228, 227, 227)),
             ),
+                       ),
                ],
                    ), 
               ]),),
+               const SizedBox(height: 15,),
                Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                  children: [
                    Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                      children: [
-                       Container(
-                                padding: const EdgeInsets.only(left: 20 , top: 30),
+                      Container(
+                                  padding: const EdgeInsets.only(left: 20 , right: 8,  top: 30),
+                                  child: const Icon(Icons.location_city, color: Color(0xFF23AA49),)),
+                       Container(                        
+                                padding: const EdgeInsets.only(top: 30),
                                 child: const Text(
-                                  'Adresse',
+                                  'Adress',
                                   style: TextStyle(fontWeight: FontWeight.normal, color: Colors.black, fontSize: 20),
                                 ),
                               ),
-                                 Container(
-                                  padding: const EdgeInsets.only(right: 30, top: 30),
-                                  child: const Icon(Icons.navigate_next_sharp))
+                                 
                               
                      ],
                    ),
                     Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                      children: [
+                      Container(
+                                  padding: const EdgeInsets.only(left: 20 ,  right: 8, top: 30),
+                                  child: const Icon(Icons.shopping_basket, color: Color(0xFF23AA49),)),
                        Container(
-                                padding: const EdgeInsets.only(left: 20 , top: 30),
+                                padding: const EdgeInsets.only(top: 30),
                                 child: const Text(
-                                  'Panier',
+                                  'Basket Shopping',
                                   style:  TextStyle(fontWeight: FontWeight.normal, color: Colors.black, fontSize: 20),
                                 ),
                               ),
-                                 Container(
-                                  padding: const EdgeInsets.only(right: 30, top: 30),
-                                  child: const Icon(Icons.navigate_next_sharp))
+                                
                               
                      ],
                    ),
                     Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                      children: [
                        Container(
-                                padding: const EdgeInsets.only(left: 20 , top: 30),
+                                  padding: const EdgeInsets.only(right: 8,left: 20 ,  top: 30),
+                                  child: const Icon(Icons.edit, color: Color(0xFF23AA49),)),
+                       Container(
+                                padding: const EdgeInsets.only( top: 30),
                                 child: const Text(
-                                  'Modifier',
+                                  'Edit',
                                   style:  TextStyle(fontWeight: FontWeight.normal, color: Colors.black, fontSize: 20),
                                 ),
                               ),
-                                 Container(
-                                  padding: const EdgeInsets.only(right: 30, top: 30),
-                                  child: const Icon(Icons.navigate_next_sharp))
+                                
                      ],
                    ),
                     Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                      children: [
+                      Container(
+                                  padding: const EdgeInsets.only(right: 8,left: 20 , top: 30),
+                                  child: const Icon(Icons.logout_outlined, color: Color(0xFF23AA49),)),
                        Container(
-                                padding: const EdgeInsets.only(left: 20 , top: 30),
+                                padding: const EdgeInsets.only( top: 30),
                                 child: const Text(
-                                  'Deconnexion',
+                                  'Log out',
                                   style:  TextStyle(fontWeight: FontWeight.normal, color: Colors.black, fontSize: 20),
                                 ),
                               ),
-                                 Container(
-                                  padding: const EdgeInsets.only(right: 30, top: 30),
-                                  child: const Icon(Icons.navigate_next_sharp))
-                              
+                                 
                      ],
                    ),
                  ],

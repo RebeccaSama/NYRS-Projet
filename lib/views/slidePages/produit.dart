@@ -29,7 +29,7 @@ class CoursComponent extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
+              SizedBox(
                 height: MediaQuery.of(context).size.height * .110,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(5),
@@ -38,26 +38,26 @@ class CoursComponent extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(left: 10, top: 5),
+                padding: const EdgeInsets.only(left: 10, top: 5),
                 margin: EdgeInsets.only(
                     left: MediaQuery.of(context).size.width * .0),
                 child: Text(domaineI.domainename,
-                    style: TextStyle(color: Colors.blue, fontSize: 11)),
+                    style: const TextStyle(color: Colors.blue, fontSize: 11)),
               ),
               Container(
-                padding: EdgeInsets.only(left: 10),
+                padding: const EdgeInsets.only(left: 10),
                 margin: EdgeInsets.only(
                     left: MediaQuery.of(context).size.width * .0),
                 child: Text(
                   domaineI.name,
-                  style: TextStyle(fontSize: 15),
+                  style: const TextStyle(fontSize: 15),
                   maxLines: 1,
                   softWrap: false,
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
               Container(
-                  margin: EdgeInsets.only(top: 10),
+                  margin: const EdgeInsets.only(top: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -65,8 +65,8 @@ class CoursComponent extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Container(
-                            margin: EdgeInsets.only(left: 7),
-                            child: Icon(
+                            margin: const EdgeInsets.only(left: 7),
+                            child: const Icon(
                               Icons.timer,
                               size: 14,
                               color: Colors.black54,
@@ -77,11 +77,11 @@ class CoursComponent extends StatelessWidget {
                         ],
                       ),
                       Container(
-                        padding: EdgeInsets.only(left: 10, top: 10),
+                        padding: const EdgeInsets.only(left: 10, top: 10),
                         margin: EdgeInsets.only(
                             right: MediaQuery.of(context).size.width * .04),
                         child: Text(domaineI.montant,
-                            style: TextStyle(color: Colors.blue, fontSize: 11)),
+                            style: const TextStyle(color: Colors.blue, fontSize: 11)),
                       ),
                     ],
                   )),

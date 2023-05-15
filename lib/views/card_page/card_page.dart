@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nyrs_projet/views/card_page/widget/cardItem.dart';
+
+import '../product_page/product_item.dart';
 
 class CardView extends StatefulWidget {
   const CardView({Key? key}) : super(key: key);
@@ -70,31 +73,15 @@ class _CardViewState extends State<CardView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(children: [
-      Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            padding: const EdgeInsets.only(right: 15),
-            child: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: const Icon(Icons.arrow_back_ios_new),
-              color: Colors.black,
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.only(left: 100),
-            child: const Text(
-              "Card",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-          ),
-        ],
+         appBar: AppBar(
+         elevation: 0,
+          backgroundColor: Colors.white,
+          leading: 
+             IconButton(onPressed:() {Navigator.pop(context);}, icon: const Icon(Icons.arrow_back_ios_new),color: Colors.black,),
+        title: const SizedBox(child:  Text('Card',style: TextStyle(color: Colors.black),), ), 
       ),
-      Container(
+        body: Column(children: [
+     Container(
         padding: const EdgeInsets.only(top: 20),
         child: SingleChildScrollView(
           physics: const AlwaysScrollableScrollPhysics(),
@@ -103,75 +90,15 @@ class _CardViewState extends State<CardView> {
             itemCount: data.length,
             shrinkWrap: true,
             itemBuilder: (BuildContext context, int index) {
-              return ListTile(
-                leading: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Image.asset(
-                    data[index]["image"],
-                    height: 80,
-                    width: 80,
-                  ),
-                ),
-                title: Row(
-                  children: [
-                    Text(
-                      data[index]["title"],
-                      textAlign: TextAlign.start,
-                      style: const TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const Spacer(),
-                    // Container(
-                    //   padding: const EdgeInsets.all(6),
-                    //   decoration: const BoxDecoration(
-                    //     shape: BoxShape.circle,
-                    //   ),
-                    //   child: const Icon(
-                    //     Icons.remove_circle,
-                    //     color: Colors.grey,
-                    //   ),
-                    // ),
-                    Container(
-                      padding: const EdgeInsets.all(6),
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color.fromARGB(255, 217, 219, 221),
-                      ),
-                      child: const Icon(
-                        Icons.remove_circle,
-                        color: Color(0xff979899),
-                      ),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(5),
-                      child: const Text("5"),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(6),
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color(0xFF23AA49),
-                      ),
-                      child: const Icon(
-                        Icons.add,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-                subtitle: Text(
-                  "${data[index]["quantity"] + "  " + data[index]["price"]}",
-                  style: const TextStyle(
-                      color: Colors.red,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12),
-                ),
+              return 
+               CardItem(
+                visible: true,
+                image: data[index]["image"],
+                    price: data[index]["title"],
+                    quantity: data[index]["quantity"],
+                    title: data[index]["price"],
               );
-            },
+              },
             separatorBuilder: (BuildContext context, int index) {
               return const Divider(
                 color: Colors.grey, // Couleur du séparateur
@@ -182,6 +109,7 @@ class _CardViewState extends State<CardView> {
           ),
         ),
       ),
+    
     ]));
   }
 }

@@ -28,7 +28,7 @@ class ProductItems extends StatelessWidget {
           const SizedBox(
             height: 4,
           ),
-          Text("$quantity+ " " + $price"),
+          Text("$quantity " "  $price"),
           const SizedBox(
             height: 8,
           ),
