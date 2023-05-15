@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:nyrs_projet/views/home/home.dart';
 
+import '../../composants/button.dart';
+
 Color myBackgroundColor = Colors.white;
 
 class SliderPages extends StatefulWidget {
@@ -64,7 +66,7 @@ class _SliderPagesState extends State<SliderPages> {
               textAlign: TextAlign.center,
             ),
           ),
-const Expanded(
+      const SizedBox(
             child:  Text(
               " Get your groceries delivered to your home",
               style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
@@ -78,24 +80,15 @@ const Expanded(
               textAlign: TextAlign.center,
             ),
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(vertical: 10.0),
-            child: ElevatedButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(const Color(0xFF23AA49)),
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                ),
-              ),
-                onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=> HomeView()));
-                        },
-              child: const Text('Shop now'),
-            ),
-          ),
-        ],
+           ButtonComponent(
+            title: "Shop now", 
+            onPressed: () {
+                          Navigator.push(
+                            context, MaterialPageRoute(
+                              builder: (context)=> const HomeView()
+                              ));
+                        },)  
+      ],
       ),
     ),
   ];

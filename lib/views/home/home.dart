@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:nyrs_projet/views/home/widgets/products.dart';
 import 'package:nyrs_projet/views/product_page/product_item.dart';
 import 'package:nyrs_projet/views/home/widgets/header.dart';
+import 'package:nyrs_projet/views/product_page/product_page.dart';
+import 'package:nyrs_projet/views/profile/profilpage.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -153,9 +156,17 @@ class _HomeViewState extends State<HomeView> {
                     padding: const EdgeInsets.all(15),
                     child: Row(
                       children: [
-                        Container(
-                            padding: EdgeInsets.zero,
-                            child: Image.asset(data[index]["image"])),
+                        GestureDetector(
+                          onTap: () { 
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => ProductPage(index: data[index]["image"])),
+                              );
+                            },
+                          child: Container(
+                              padding: EdgeInsets.zero,
+                              child: Image.asset(data[index]["image"])),
+                        ),
                         Container(
                           decoration: BoxDecoration(
                             borderRadius: const BorderRadius.only(
@@ -353,12 +364,12 @@ class _HomeViewState extends State<HomeView> {
               IconButton(
                 icon: const Icon(Icons.home),
                 onPressed: () {
-                  // Handle home button tap
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomeView()));
                 },
               ),
               IconButton(
                 icon: const Icon(
-                  Icons.dashboard,
+                  Icons.category_outlined,
                   color: Colors.grey,
                 ),
                 onPressed: () {
@@ -375,7 +386,7 @@ class _HomeViewState extends State<HomeView> {
               IconButton(
                 icon: const Icon(Icons.person),
                 onPressed: () {
-                  // Handle settings button tap
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const ProfilePage()));
                 },
               ),
             ],

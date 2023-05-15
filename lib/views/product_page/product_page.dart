@@ -4,8 +4,9 @@ import 'product_item.dart';
 import '../home/widgets/header.dart';
 
 class ProductPage extends StatefulWidget {
+  final int index;
   const ProductPage({
-    Key? key,
+    Key? key, required this.index,
   }) : super(key: key);
 
   @override
@@ -51,6 +52,8 @@ class _ProductPageState extends State<ProductPage> {
       "quantity": "1kg"
     },
   ];
+
+  get index => null;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,9 +84,9 @@ class _ProductPageState extends State<ProductPage> {
                             width: 1, color: Colors.black.withOpacity(0.12))),
                     child: const Icon(Icons.chevron_left),
                   ),
-                  const Text("Vegetables",
+                   Text("Vegetables $index" ,
                       style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                          const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
