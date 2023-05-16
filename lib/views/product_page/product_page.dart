@@ -6,7 +6,8 @@ import '../home/widgets/header.dart';
 class ProductPage extends StatefulWidget {
   final int index;
   const ProductPage({
-    Key? key, required this.index,
+    Key? key,
+    required this.index,
   }) : super(key: key);
 
   @override
@@ -84,9 +85,9 @@ class _ProductPageState extends State<ProductPage> {
                             width: 1, color: Colors.black.withOpacity(0.12))),
                     child: const Icon(Icons.chevron_left),
                   ),
-                   Text("Vegetables $index" ,
-                      style:
-                          const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                  Text("Vegetables $index",
+                      style: const TextStyle(
+                          fontSize: 24, fontWeight: FontWeight.bold)),
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(

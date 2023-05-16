@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nyrs_projet/views/detail_page/detailview.dart';
 import 'package:nyrs_projet/views/home/widgets/products.dart';
 import 'package:nyrs_projet/views/product_page/product_item.dart';
 import 'package:nyrs_projet/views/home/widgets/header.dart';
@@ -15,6 +16,7 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     final ScrollController _scrollController = ScrollController();
+    int pageIndex = 0;
     List<Map> data = [
       {
         "image": "assets/images/acceuil.png",
@@ -121,7 +123,7 @@ class _HomeViewState extends State<HomeView> {
               child: TextField(
                 decoration: InputDecoration(
                   filled: true,
-                  fillColor:  Color(0xffF3F5F7),
+                  fillColor: Color(0xffF3F5F7),
                   hintText: 'Rechercher',
                   prefixIcon: Icon(
                     Icons.search,
@@ -157,12 +159,14 @@ class _HomeViewState extends State<HomeView> {
                     child: Row(
                       children: [
                         GestureDetector(
-                          onTap: () { 
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => ProductPage(index: data[index]["image"])),
-                              );
-                            },
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      ProductPage(index: data[index]["image"])),
+                            );
+                          },
                           child: Container(
                               padding: EdgeInsets.zero,
                               child: Image.asset(data[index]["image"])),
@@ -191,7 +195,9 @@ class _HomeViewState extends State<HomeView> {
                                         letterSpacing: 2),
                                   ),
                                 ),
-                                const SizedBox(height: 15,),
+                                const SizedBox(
+                                  height: 15,
+                                ),
                                 Padding(
                                   padding:
                                       const EdgeInsets.symmetric(vertical: 2),
@@ -310,11 +316,24 @@ class _HomeViewState extends State<HomeView> {
                     crossAxisCount: 2,
                     childAspectRatio: 3 / 3.9),
                 itemBuilder: (BuildContext context, int index) {
-                  return ProductItems(
-                    image: items[index]["image"],
-                    price: items[index]["title"],
-                    quantity: items[index]["quantity"],
-                    title: items[index]["price"],
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DetailView(
+                                    image: items[index]["image"],
+                                    price: items[index]["title"],
+                                    quantity: items[index]["quantity"],
+                                    title: items[index]["price"],
+                                  )));
+                    },
+                    child: ProductItems(
+                      image: items[index]["image"],
+                      price: items[index]["title"],
+                      quantity: items[index]["quantity"],
+                      title: items[index]["price"],
+                    ),
                   );
                 },
               ),
@@ -324,74 +343,6 @@ class _HomeViewState extends State<HomeView> {
             )
           ])),
         ],
-      ),
-      floatingActionButton: Stack(
-        children: [
-          FloatingActionButton(
-            backgroundColor: const Color(0xff23AA49),
-            child: const Icon(Icons.shopping_cart),
-            onPressed: () {
-              // Handle floating action button tap
-            },
-          ),
-          Positioned(
-            bottom: 0,
-            right: 0,
-            child: Container(
-              padding: const EdgeInsets.all(4),
-              decoration: const BoxDecoration(
-                color: Colors.red,
-                shape: BoxShape.circle,
-              ),
-              child: const Text(
-                '9+',
-                style: TextStyle(
-                  fontSize: 12,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomAppBar(
-        child: Container(
-          padding: const EdgeInsets.all(8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              IconButton(
-                icon: const Icon(Icons.home),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomeView()));
-                },
-              ),
-              IconButton(
-                icon: const Icon(
-                  Icons.category_outlined,
-                  color: Colors.grey,
-                ),
-                onPressed: () {
-                  // Handle search button tap
-                },
-              ),
-              const SizedBox(width: 48), //
-              IconButton(
-                icon: const Icon(Icons.description),
-                onPressed: () {
-                  // Handle search button tap
-                },
-              ),
-              IconButton(
-                icon: const Icon(Icons.person),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const ProfilePage()));
-                },
-              ),
-            ],
-          ),
-        ),
       ),
     );
   }
