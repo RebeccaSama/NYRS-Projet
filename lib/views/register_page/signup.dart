@@ -181,7 +181,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: ((context) => BottomNavBar())));
+                                    builder: ((context) => const BottomNavBar())));
                           }
                         : null,
                     title: "SE CONNECTER",

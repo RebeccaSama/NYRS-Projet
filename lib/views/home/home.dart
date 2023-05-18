@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nyrs_projet/views/detail_page/detailview.dart';
-import 'package:nyrs_projet/views/home/widgets/products.dart';
 import 'package:nyrs_projet/views/product_page/product_item.dart';
 import 'package:nyrs_projet/views/home/widgets/header.dart';
-import 'package:nyrs_projet/views/product_page/product_page.dart';
-import 'package:nyrs_projet/views/profile/profilpage.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -16,7 +13,6 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     final ScrollController _scrollController = ScrollController();
-    int pageIndex = 0;
     List<Map> data = [
       {
         "image": "assets/images/acceuil.png",
@@ -123,105 +119,105 @@ class _HomeViewState extends State<HomeView> {
             ),
           ),
           const SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
-              child: TextField(
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Color(0xffF3F5F7),
-                  hintText: 'Rechercher',
-                  prefixIcon: Icon(
-                    Icons.search,
-                    color: Color(0xFF23AA49),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+                child: TextField(
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Color(0xffF3F5F7),
+                    hintText: 'Rechercher',
+                    prefixIcon: Icon(
+                      Icons.search,
+                      color: Color(0xFF23AA49),
+                    ),
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.all(20),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.all(Radius.circular(30)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.all(Radius.circular(30)),
+                    ),
                   ),
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.all(20),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide.none,
-                    borderRadius: BorderRadius.all(Radius.circular(30)),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide.none,
-                    borderRadius: BorderRadius.all(Radius.circular(30)),
-                  ),
+                  style: TextStyle(fontSize: 16),
                 ),
-                style: TextStyle(fontSize: 16),
               ),
             ),
-          ),
-          SliverList(
-              delegate: SliverChildListDelegate([
-            SizedBox(
-              height: 200,
-              child: ListView.builder(
-                controller: _scrollController,
-                scrollDirection: Axis.horizontal,
-                shrinkWrap: true,
-                itemCount: data.length,
-                itemBuilder: (context, index) {
-                  return Container(
-                    padding: const EdgeInsets.all(15),
-                    child: Row(
-                      children: [
-                       Container(
-                              padding: EdgeInsets.zero,
-                              child: Image.asset(data[index]["image"])),
-                       
-              --          Container(
-                          decoration: BoxDecoration(
-                            borderRadius: const BorderRadius.only(
-                              topRight: Radius.circular(8),
-                              bottomRight: Radius.circular(8),
-                            ),
-                            color: index % 2 == 0
-                                ? const Color(0xFF23AA49)
-                                : const Color(0xFFFF8181),
+            SliverList(
+                delegate: SliverChildListDelegate([
+              SizedBox(
+                height: 200,
+                child: ListView.builder(
+                  controller: _scrollController,
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  itemCount: data.length,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      padding: const EdgeInsets.all(15),
+                      child: Row(
+                        children: [
+                        Container(
+                                padding: EdgeInsets.zero,
+                                child: Image.asset(data[index]["image"])),
+                        Container(
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.only(
+                    topRight: Radius.circular(8),
+                    bottomRight: Radius.circular(8),
+                  ),
+                  color: index % 2 == 0
+                      ? const Color(0xFF23AA49)
+                      : const Color(0xFFFF8181),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.only(top: 15),
+                        child: Text(
+                          data[index]["title"],
+                          style: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                            letterSpacing: 2,
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(16),
-                            child: Column(
-                              children: [
-                                Container(
-                                  padding: const EdgeInsets.only(top: 15),
-                                  child: Text(
-                                    data[index]["title"],
-                                    style: const TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 15,
-                                        letterSpacing: 2),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 15,
-                                ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 2),
-                                  child: Text(
-                                    data[index]["title2"],
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  padding: const EdgeInsets.all(8),
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(30),
-                                      color: Colors.white),
-                                  child: Text(
-                                    data[index]["titlebtn"],
-                                    textAlign: TextAlign.center,
-                                    style: const TextStyle(height: 1),
-                                  ),
-                                )
-                              ],
-                            ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 2),
+                        child: Text(
+                          data[index]["title2"],
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: Colors.white,
+                        ),
+                        child: Text(
+                          data[index]["titlebtn"],
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(height: 1),
+                        ),
+                      ),
+                          ],
+                      ),
                           ),
                       ),
-                      ],
-                    ),
+                        ],
+                      ),
                   );
                 },
               ),

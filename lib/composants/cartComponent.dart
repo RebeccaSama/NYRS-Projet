@@ -1,10 +1,11 @@
+// ignore_for_file: must_be_immutable, prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 import 'package:nyrs_projet/class/produit.dart';
 
-// ignore: must_be_immutable
 class CartComponent extends StatelessWidget {
   CartComponent(
-      {required this.domaineI, this.type, this.title = '', this.ontap});
+      {Key? key, required this.domaineI, this.type, this.title = '', this.ontap}) : super(key: key);
   var ontap;
   var title;
   var type;
@@ -27,7 +28,7 @@ class CartComponent extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
+              SizedBox(
                 height: MediaQuery.of(context).size.height * .110,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(5),

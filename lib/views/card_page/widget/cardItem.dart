@@ -80,6 +80,6 @@ class CardItem extends StatelessWidget {
             color: Colors.red, fontWeight: FontWeight.bold, fontSize: 12),
       ),
     );
-    ;
+    
   }
 }

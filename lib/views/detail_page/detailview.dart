@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:shape_of_view_null_safe/shape_of_view_null_safe.dart';
 
 import 'package:nyrs_projet/views/detail_page/component.dart';
 import 'package:nyrs_projet/views/detail_page/detail_item.dart';
 
 import '../../composants/button.dart';
-import '../card_page/widget/cardItem.dart';
 
 class DetailView extends StatefulWidget {
   final String title;

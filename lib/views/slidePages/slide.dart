@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:nyrs_projet/views/home/home.dart';
 import 'package:nyrs_projet/views/register_page/signup.dart';
 
 import '../../composants/button.dart';

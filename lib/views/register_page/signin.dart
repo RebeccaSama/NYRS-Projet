@@ -127,7 +127,7 @@ class _SignInPageState extends State<SignInPage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: ((context) => BottomNavBar())));
+                                    builder: ((context) => const BottomNavBar())));
                           }
                         : null,
                     title: "SE CONNECTER",

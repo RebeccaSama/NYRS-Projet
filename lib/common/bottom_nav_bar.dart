@@ -6,6 +6,8 @@ import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:badges/badges.dart' as badges;
 
 class BottomNavBar extends StatefulWidget {
+  const BottomNavBar({Key? key}) : super(key: key);
+
   @override
   State<BottomNavBar> createState() => _BottomNavBarState();
 }

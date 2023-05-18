@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:nyrs_projet/class/produit.dart';
 
 transformTocart(

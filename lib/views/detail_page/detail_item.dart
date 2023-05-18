@@ -70,6 +70,6 @@ class  DetailItem extends StatelessWidget {
                       fontSize: 12),
                 ),
               );
-    ;
+    
   }
 }
