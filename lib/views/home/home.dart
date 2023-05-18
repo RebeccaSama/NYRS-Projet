@@ -101,7 +101,12 @@ class _HomeViewState extends State<HomeView> {
       "assets/images/diary.png",
       "assets/images/diary.png",
     ];
-    List<String> title = ["Fruit", "Vegetable", "Diary", "Meat", "Meat"];
+    List<String> title = [
+      "Fruit", 
+      "Vegetable", 
+      "Diary", 
+      "Meat",
+      ];
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -158,20 +163,11 @@ class _HomeViewState extends State<HomeView> {
                     padding: const EdgeInsets.all(15),
                     child: Row(
                       children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      ProductPage(index: data[index]["image"])),
-                            );
-                          },
-                          child: Container(
+                       Container(
                               padding: EdgeInsets.zero,
                               child: Image.asset(data[index]["image"])),
-                        ),
-                        Container(
+                       
+              --          Container(
                           decoration: BoxDecoration(
                             borderRadius: const BorderRadius.only(
                               topRight: Radius.circular(8),
@@ -223,7 +219,7 @@ class _HomeViewState extends State<HomeView> {
                               ],
                             ),
                           ),
-                        ),
+                      ),
                       ],
                     ),
                   );

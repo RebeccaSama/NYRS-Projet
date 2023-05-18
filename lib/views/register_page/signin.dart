@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:get/get.dart';
-import 'package:nyrs_projet/common/bottom_nav_bar.dart';
-import 'package:nyrs_projet/views/home/home.dart';
+import '../../common/bottom_nav_bar.dart';
 
 import '../../common/custom_button.dart';
 import '../../common/text_field_input.dart';
-import '../../composants/button.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -47,7 +43,7 @@ class _SignInPageState extends State<SignInPage> {
                   Container(
                     padding: const EdgeInsets.only(top: 50, bottom: 70),
                     child: const Text(
-                      'Sign Up',
+                      'Log In',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 32.0,

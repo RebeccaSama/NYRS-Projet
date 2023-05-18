@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nyrs_projet/views/login_page/signup.dart';
-import 'package:nyrs_projet/views/register_page/signin.dart';
 import 'package:nyrs_projet/views/splashscreen/splashscreen.dart';
 
 void main() {
@@ -13,6 +11,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: SignUpPage());
+        debugShowCheckedModeBanner: false, home: SplashScreen());
   }
 }
